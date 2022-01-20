@@ -44,7 +44,7 @@ namespace LW_2_12
             return $"{Name}:{City}:{AverageSalary}";
         }
 
-        public int CompareTo(object obj)
+        public int CompareTo(object? obj)
         {
             Organization org = obj as Organization;
             int res = 1;

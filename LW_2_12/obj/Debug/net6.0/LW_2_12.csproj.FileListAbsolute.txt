@@ -1,0 +1,15 @@
+D:\University\2 year\OOP\LW_2_12\LW_2_12\bin\Debug\net6.0\LW_2_12.exe
+D:\University\2 year\OOP\LW_2_12\LW_2_12\bin\Debug\net6.0\LW_2_12.deps.json
+D:\University\2 year\OOP\LW_2_12\LW_2_12\bin\Debug\net6.0\LW_2_12.runtimeconfig.json
+D:\University\2 year\OOP\LW_2_12\LW_2_12\bin\Debug\net6.0\LW_2_12.dll
+D:\University\2 year\OOP\LW_2_12\LW_2_12\bin\Debug\net6.0\ref\LW_2_12.dll
+D:\University\2 year\OOP\LW_2_12\LW_2_12\bin\Debug\net6.0\LW_2_12.pdb
+D:\University\2 year\OOP\LW_2_12\LW_2_12\obj\Debug\net6.0\LW_2_12.csproj.AssemblyReference.cache
+D:\University\2 year\OOP\LW_2_12\LW_2_12\obj\Debug\net6.0\LW_2_12.GeneratedMSBuildEditorConfig.editorconfig
+D:\University\2 year\OOP\LW_2_12\LW_2_12\obj\Debug\net6.0\LW_2_12.AssemblyInfoInputs.cache
+D:\University\2 year\OOP\LW_2_12\LW_2_12\obj\Debug\net6.0\LW_2_12.AssemblyInfo.cs
+D:\University\2 year\OOP\LW_2_12\LW_2_12\obj\Debug\net6.0\LW_2_12.csproj.CoreCompileInputs.cache
+D:\University\2 year\OOP\LW_2_12\LW_2_12\obj\Debug\net6.0\LW_2_12.dll
+D:\University\2 year\OOP\LW_2_12\LW_2_12\obj\Debug\net6.0\ref\LW_2_12.dll
+D:\University\2 year\OOP\LW_2_12\LW_2_12\obj\Debug\net6.0\LW_2_12.pdb
+D:\University\2 year\OOP\LW_2_12\LW_2_12\obj\Debug\net6.0\LW_2_12.genruntimeconfig.cache

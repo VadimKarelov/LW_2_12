@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,10 +13,11 @@ namespace LW_2_12
             get
             {
                 int count = 0;
-                if (_last != null)
+                Element<T> cur = _last;
+                while (cur != null)
                 {
                     count++;
-                    for (; _last.PreviousElement != null; count++) { }
+                    cur = cur.PreviousElement;
                 }
                 return count;
             }
@@ -43,18 +43,15 @@ namespace LW_2_12
 
         public MyStack(MyStack<T> collection)
         {
-            // get elements from stack
             List<T> ts = new List<T>();
-            while (collection.Count > 0)
+            foreach (T item in collection)
             {
-                ts.Add(collection.Remove());                
+                ts.Add(item);
             }
-
-            // copy to new (this stack)
-            while (ts.Count > 0)
+            ts.Reverse();
+            foreach (T item in ts)
             {
-                this.Push(ts[ts.Count - 1]);
-                ts.RemoveAt(ts.Count - 1);
+                this.Push(item);
             }
         }
 
@@ -149,8 +146,16 @@ namespace LW_2_12
 
         public MyStack<T> ShallowCopy()
         {
-            MyStack<T> res = new MyStack<T>();
-            res._last = _last;
+            return this;
+        }
+
+        public string Show()
+        {
+            string res = "";
+            foreach (var item in this)
+            {
+                res += item + " ";
+            }
             return res;
         }
 
@@ -197,13 +202,17 @@ namespace LW_2_12
 
     class MyEnumerator<T> : IEnumerator<T>
     {
-        Element<T>? _begin;
-        Element<T>? _current;
+        private Element<T>? _begin;
+        private Element<T>? _current;
+
+        private bool _isCalled = false;
 
         public MyEnumerator(MyStack<T> stack)
         {
             _begin = stack.GetAsElement();
             _current = _begin;
+
+            if (stack.Count == 0) _isCalled = true;
         }
 
         public object Current { get { return _current; } }
@@ -225,14 +234,22 @@ namespace LW_2_12
 
         public bool MoveNext()
         {
-            if (_current != null && _current.PreviousElement != null)
+            if (_isCalled)
             {
-                _current = _current.PreviousElement;
-                return true;
+                if (_current != null && _current.PreviousElement != null)
+                {
+                    _current = _current.PreviousElement;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
-                return false;
+                _isCalled = true;
+                return true;
             }
         }
 
