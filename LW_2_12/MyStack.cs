@@ -154,7 +154,10 @@ namespace LW_2_12
             string res = "";
             foreach (var item in this)
             {
-                res += item + " ";
+                if (item != null)
+                    res += item + " ";
+                else
+                    res += "null ";
             }
             return res;
         }

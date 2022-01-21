@@ -6,11 +6,11 @@ namespace LW_2_12
     {
         static void Main(string[] args)
         {
-            MyStack<int> emptyStack = new MyStack<int>();
-            MyStack<int> defaultStack = new MyStack<int>(5);
-            
-            int[] values = { 1, 2, 3, 4, 5, 6 };
-            MyStack<int> notEmptyStack = new MyStack<int>();
+            MyStack<Organization> emptyStack = new MyStack<Organization>();
+            MyStack<Organization> defaultStack = new MyStack<Organization>(5);
+
+            Organization[] values = { new Organization("ZZ", "PP", 500), new Organization("AA", "VV", 40) };
+            MyStack<Organization> notEmptyStack = new MyStack<Organization>();
             notEmptyStack.Push(values);
 
             Console.WriteLine(">>> Заполнение с использованием всех видов конструкторов");
@@ -22,13 +22,13 @@ namespace LW_2_12
             Console.WriteLine(notEmptyStack.Show() + $" ({notEmptyStack.Count})");
 
 
-            Console.WriteLine(">>> Поиск элемента 4 и 10 в третьей коллекции");
-            Console.WriteLine($"Элемент 4 найден: {notEmptyStack.Contains(4)}");
-            Console.WriteLine($"Элемент 10 найден: {notEmptyStack.Contains(10)}");
+            Console.WriteLine(">>> Поиск элемента в третьей коллекции");
+            Console.WriteLine($"Существующий элемент найден: {notEmptyStack.Contains(new Organization("ZZ", "PP", 500))}");
+            Console.WriteLine($"Не существующий элемент найден: {notEmptyStack.Contains(new Organization("Z", "P", 300))}");
 
 
             Console.WriteLine(">>> Клонирование 3 стека в 1");
-            emptyStack = new MyStack<int>(notEmptyStack);
+            emptyStack = new MyStack<Organization>(notEmptyStack);
 
             Console.WriteLine("Стек 1");
             Console.WriteLine(emptyStack.Show() + $" ({emptyStack.Count})");
@@ -38,7 +38,7 @@ namespace LW_2_12
             Console.WriteLine(notEmptyStack.Show() + $" ({notEmptyStack.Count})");
 
             Console.WriteLine("Добавление в 3 стек элемента");
-            notEmptyStack.Push(7);
+            notEmptyStack.Push(new Organization("BB", "UU", 1000));
 
             Console.WriteLine("Стек 1");
             Console.WriteLine(emptyStack.Show() + $" ({emptyStack.Count})");
@@ -59,7 +59,7 @@ namespace LW_2_12
             Console.WriteLine(notEmptyStack.Show() + $" ({notEmptyStack.Count})");
 
             Console.WriteLine("Добавление в 2 стек элемента");
-            defaultStack.Push(66);
+            defaultStack.Push(new Organization("QQ", "WW", 66));
 
             Console.WriteLine("Стек 1");
             Console.WriteLine(emptyStack.Show() + $" ({emptyStack.Count})");

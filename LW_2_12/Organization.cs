@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace LW_2_12
 {
-    public class Organization : IComparable, ICloneable, IExecutable
+    public class Organization :  IComparable, ICloneable, IExecutable
     {
         public string Name { get; set; }
         public string City { get; set; }
-
         public double AverageSalary { get; set; }
 
         public Organization(string name, string locationCity, double avgSalary)
