@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LW_2_12
 {
-    internal class MyStack<T> : IEnumerable<T>
+    public class MyStack<T> : IEnumerable<T>
     {
         public int Count
         {
@@ -162,6 +162,42 @@ namespace LW_2_12
             return res;
         }
 
+        public override bool Equals(object? obj)
+        {
+            if (obj is MyStack<T> otherStack)
+            {
+                if (otherStack.Count == this.Count)
+                {
+                    IEnumerator<T> thisEnum = this.GetEnumerator();
+                    IEnumerator<T> otherEnum = otherStack.GetEnumerator();
+
+                    thisEnum.MoveNext();
+                    otherEnum.MoveNext();
+
+                    bool isEnd = false;
+
+                    while (!isEnd)
+                    {
+                        if (!isEnd && !thisEnum.Current.Equals(otherEnum.Current))
+                            return false;
+
+                        isEnd = !thisEnum.MoveNext();
+                        otherEnum.MoveNext(); // size is the same
+                    }
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         // ========= Очистка ресурсов =========
         public void Dispose()
         {
@@ -173,7 +209,7 @@ namespace LW_2_12
         }
     }
 
-    class Element<T> : IDisposable
+    public class Element<T> : IDisposable
     {
         public T Value;
 
@@ -203,7 +239,7 @@ namespace LW_2_12
         }
     }
 
-    class MyEnumerator<T> : IEnumerator<T>
+    public class MyEnumerator<T> : IEnumerator<T>
     {
         private Element<T>? _begin;
         private Element<T>? _current;
