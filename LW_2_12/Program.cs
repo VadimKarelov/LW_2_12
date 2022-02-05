@@ -13,7 +13,7 @@ namespace LW_2_12
             MyStack<Organization> notEmptyStack = new MyStack<Organization>();
             notEmptyStack.Push(values);
 
-            Console.WriteLine(">>> Заполнение с использованием всех видов конструкторов");
+            Console.WriteLine("\n>>> Заполнение с использованием всех видов конструкторов");
             Console.WriteLine("Вывод пустого стека");
             Console.WriteLine(emptyStack.Show() + $" ({emptyStack.Count})");
             Console.WriteLine("Вывод стека с предопределенным размером");
@@ -22,12 +22,12 @@ namespace LW_2_12
             Console.WriteLine(notEmptyStack.Show() + $" ({notEmptyStack.Count})");
 
 
-            Console.WriteLine(">>> Поиск элемента в третьей коллекции");
+            Console.WriteLine("\n>>> Поиск элемента в третьей коллекции");
             Console.WriteLine($"Существующий элемент найден: {notEmptyStack.Contains(new Organization("ZZ", "PP", 500))}");
             Console.WriteLine($"Не существующий элемент найден: {notEmptyStack.Contains(new Organization("Z", "P", 300))}");
 
 
-            Console.WriteLine(">>> Клонирование 3 стека в 1");
+            Console.WriteLine("\n>>> Клонирование 3 стека в 1");
             emptyStack = new MyStack<Organization>(notEmptyStack);
 
             Console.WriteLine("Стек 1");
@@ -48,7 +48,7 @@ namespace LW_2_12
             Console.WriteLine(notEmptyStack.Show() + $" ({notEmptyStack.Count})");
 
 
-            Console.WriteLine(">>> Поверхностное копирование 2 стека в 1");
+            Console.WriteLine("\n>>> Поверхностное копирование 2 стека в 1");
             emptyStack = defaultStack.ShallowCopy();
 
             Console.WriteLine("Стек 1");
@@ -69,7 +69,7 @@ namespace LW_2_12
             Console.WriteLine(notEmptyStack.Show() + $" ({notEmptyStack.Count})");
 
 
-            Console.WriteLine(">>> Очистка всех стеков");
+            Console.WriteLine("\n>>> Очистка всех стеков");
 
             emptyStack.Remove(emptyStack.Count);
             defaultStack.Remove(defaultStack.Count);

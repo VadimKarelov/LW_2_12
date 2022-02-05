@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LW_2_12
 {
-    public class Organization :  IComparable, ICloneable, IExecutable
+    public class Organization : IComparable, ICloneable, IExecutable
     {
         public string Name { get; set; }
         public string City { get; set; }
@@ -57,7 +57,7 @@ namespace LW_2_12
                 if (res == 0)
                 {
                     res = this.AverageSalary.CompareTo(org.AverageSalary);
-                }                
+                }
             }
             return res;
         }
@@ -67,6 +67,16 @@ namespace LW_2_12
             var res = (Organization)this.MemberwiseClone();
             res.Name += " clone";
             return res;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            Organization org = obj as Organization;
+
+            if (org == null) return false;
+
+            return this.Name.Equals(org.Name) && this.City.Equals(org.City)
+                && this.AverageSalary.Equals(org.AverageSalary);
         }
     }
 }
